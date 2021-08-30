@@ -48,4 +48,20 @@ function medianGrade(grades){
         return grades[(grades.length-1)/2];
     }
 }
-console.log(medianGrade(grades));
+//console.log(medianGrade(grades));
+console.log(grades);
+
+function secondHalfGrades(grades){
+    //console.log(grades)
+    let secondHalfArr;
+    if(grades.length%2 === 0){
+        grades.splice(0,grades.length/2)
+        secondHalfArr=grades
+    }
+    else{
+        grades.splice(0,grades.length/2-1)
+        secondHalfGrades=grades;
+    }
+    return gradeRange(secondHalfArr);
+}
+console.log(secondHalfGrades(grades));
