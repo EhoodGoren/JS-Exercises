@@ -23,13 +23,23 @@ function highestGrade(grades){
 }
 function arrayAscending(grades){
     let gradesLength=grades.length;
+    let firstHalf=[];
+    let secondHalf=[];
+    let twoHalves=[];
     let ascArr=[];
-    for(let i=0; i<gradesLength; i++){
-        ascArr[i]=lowestGrade(grades);
-        grades.slice( grades.indexOf(lowestGrade(grades))-1, grades.indexOf(lowestGrade(grades))+1 );
+    ascArr[0]=lowestGrade(grades);
+    firstHalf=grades.slice( 0, grades.indexOf(lowestGrade(grades)) );
+    secondHalf=grades.slice(grades.indexOf(lowestGrade(grades))+1, gradesLength);
+    twoHalves=firstHalf.concat(secondHalf);
+    for(let i=1; i<gradesLength; i++){
+        ascArr[i]=lowestGrade(twoHalves);
+        firstHalf=twoHalves.slice( 0, twoHalves.indexOf(lowestGrade(twoHalves)) );
+        secondHalf=twoHalves.slice(twoHalves.indexOf(lowestGrade(twoHalves))+1, twoHalves.length);
+        twoHalves=firstHalf.concat(secondHalf);
     }
     return ascArr;
 }
+console.log(arrayAscending(grades));
 //end of said base functions
 
 
@@ -60,7 +70,5 @@ function secondHalfGrades(grades){
     return gradeRange(secondHalfArr);
 }
 
-console.log(gradeRange(grades));
-//console.log(medianGrade(grades));
-console.log(secondHalfGrades(grades));
-//console.log("Stats: \n Range: " + gradeRange(grades) + "\n Median: " + medianGrade(grades) + "\n Half Range: " + secondHalfGrades(grades));
+
+console.log("Stats: \n Range: " + gradeRange(grades) + "\n Median: " + medianGrade(grades) + "\n Half Range: " + secondHalfGrades(grades));
