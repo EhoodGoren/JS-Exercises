@@ -26,7 +26,7 @@ function arrayAscending(grades){
     let ascArr=[];
     for(let i=0; i<gradesLength; i++){
         ascArr[i]=lowestGrade(grades);
-        grades.splice(grades.indexOf(lowestGrade(grades)),1);
+        grades.slice( grades.indexOf(lowestGrade(grades))-1, grades.indexOf(lowestGrade(grades))+1 );
     }
     return ascArr;
 }
@@ -52,12 +52,10 @@ function medianGrade(grades){
 function secondHalfGrades(grades){
     let secondHalfArr;
     if(grades.length%2 === 0){
-        grades.splice(0,grades.length/2)
-        secondHalfArr=grades
+        secondHalfArr=grades.slice(grades.length/2, grades.length)
     }
     else{
-        grades.splice(0,grades.length/2-1)
-        secondHalfGrades=grades;
+        secondHalfArr=grades.slice( (grades.length-1)/2, grades.length );
     }
     return gradeRange(secondHalfArr);
 }
