@@ -39,7 +39,6 @@ function arrayAscending(grades){
     }
     return ascArr;
 }
-console.log(arrayAscending(grades));
 //end of said base functions
 
 
