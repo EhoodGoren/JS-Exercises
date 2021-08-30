@@ -45,7 +45,7 @@ function medianGrade(grades){
         return ( grades[grades.length/2] + grades[(grades.length/2)-1] )/2;
     }
     else{
-        return grades[(grades.length+1)/2];
+        return grades[(grades.length-1)/2];
     }
 }
 console.log(medianGrade(grades));
