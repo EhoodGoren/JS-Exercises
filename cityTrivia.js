@@ -16,7 +16,7 @@ function guessCity(capital, coastal, famous, ancient){
     if(!capital && coastal && !famous && !ancient){
         return "Zikim";
     }
-    if(!capital, !coastal, !famous, !ancient){
+    if(!capital && !coastal && !famous && !ancient){
         return "Musmus";
     }
     else{
