@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function guessCity(capital, coastal, famous, ancient){
     if(capital && !coastal && famous && ancient){
